@@ -56,7 +56,9 @@ int wybor() {
 }
 
 void edytujZadanie(vector<string>& lista) {
-    if (lista.empty()) { cout << "Brak zadan na liscie!" << endl; return; }
+    if (lista.empty()) { 
+        return; 
+    }
     int nrZadania;
     string noweZadanie;
 
@@ -195,13 +197,15 @@ bool potwierdzenie(const string& komunikat) {
 }
 
 int main() {
+    setlocale(LC_ALL, "");
+
     string nazwaPliku;
     vector<string> listaZadan;
 
-    cout << "Prosze wybrac folder do ktorego beda zapisywane i pobierane pliki!" << endl;
+    cout << "Proszę wybrać folder do którego beda zapisywane i pobierane pliki!" << endl;
 
     string folder = choose_folder();
-    int wyborUsuniecia;
+    string wyborUsuniecia;
 
     if (!folder.empty()) {
         cout << "Wybrano folder: " << folder << endl;
@@ -227,10 +231,10 @@ int main() {
             cout << "[2] Usunac pojedyncze zadania z listy wybrane przez ciebie" << endl;
             cout << "Podaj cokolwiek aby cofnac" << endl;
             cin >> wyborUsuniecia;
-            if (wyborUsuniecia == 1) {
+            if (wyborUsuniecia == "1") {
                 wyczyscCalaListe(listaZadan);
             }
-            else if (wyborUsuniecia == 2) {
+            else if (wyborUsuniecia == "2") {
                 pokazywanieZadania(listaZadan);
                 usuwanieZadania(listaZadan);
             }

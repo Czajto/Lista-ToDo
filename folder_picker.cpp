@@ -5,7 +5,7 @@
 #include <string>
 #include <iostream>
 
-// Funkcja konwertuj�ca std::wstring na std::string
+// Funkcja konwertująca std::wstring na std::string
 std::string wstring_to_string(const std::wstring& wstr) {
     int size_needed = WideCharToMultiByte(CP_UTF8, 0, wstr.c_str(), -1, NULL, 0, NULL, NULL);
     std::string str(size_needed - 1, 0);
@@ -16,7 +16,7 @@ std::string wstring_to_string(const std::wstring& wstr) {
 std::string choose_folder() {
     // Inicjalizowanie COM
     if (CoInitializeEx(NULL, COINIT_APARTMENTTHREADED) != S_OK) {
-        std::cerr << "B��d inicjalizacji COM!" << std::endl;
+        std::cerr << "Błąd inicjalizacji COM!" << std::endl;
         return "";
     }
 
