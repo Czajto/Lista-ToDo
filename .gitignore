@@ -1,0 +1,48 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.sln
+*.vcxproj.*
+*.vcxproj
+*.idb
+*.pdb
+*.ipch
+*.tlog
+*.cache
+*.obj
+*.ilk
+*.exp
+*.lib
+*.ncb
+*.aps
+*.sdf
+*.opensdf
+Debug/
+Release/
+x64/
+*.log
+
+# Code::Blocks
+*.depend
+*.layout
+*.cbp.*
+*.workspace.*
+*.obj
+bin/
+obj/
+
+# Ogólne pliki kompilacji i tymczasowe
+*.exe
+*.o
+*.out
+*.a
+*.so
+*.dll
+*.log
+*.swp
+*.DS_Store  # MacOS
+
+# Pliki generowane przez edytory (opcjonalnie)
+*.bak
+*.tmp
