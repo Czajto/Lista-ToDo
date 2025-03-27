@@ -27,6 +27,7 @@ x64/
 *.depend
 *.layout
 *.cbp.*
+*.cbp
 *.workspace.*
 *.obj
 bin/

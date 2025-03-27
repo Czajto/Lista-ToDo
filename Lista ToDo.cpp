@@ -56,8 +56,8 @@ int wybor() {
 }
 
 void edytujZadanie(vector<string>& lista) {
-    if (lista.empty()) { 
-        return; 
+    if (lista.empty()) {
+        return;
     }
     int nrZadania;
     string noweZadanie;
