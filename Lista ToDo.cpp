@@ -43,14 +43,15 @@ void czyscEkran() {
 
 int wybor() {
     int wybor;
-    cout << "[1] Dodaj zadanie do listy" << endl;
-    cout << "[2] Pokaż zadania z listy" << endl;
-    cout << "[3] Usuń zadanie z listy" << endl;
-    cout << "[4] Edytuj zadanie z listy" << endl;
-    cout << "[5] Zapisz do pliku" << endl;
-    cout << "[6] Wczytaj z pliku" << endl;
-    cout << "[7] Usuń plik" << endl;
-    cout << "[8] Wyjście" << endl;
+    cout << "[1] Wybierz folder" << endl;
+    cout << "[2] Dodaj zadanie do listy" << endl;
+    cout << "[3] Pokaż zadania z listy" << endl;
+    cout << "[4] Usuń zadanie z listy" << endl;
+    cout << "[5] Edytuj zadanie z listy" << endl;
+    cout << "[6] Zapisz do pliku" << endl;
+    cout << "[7] Wczytaj z pliku" << endl;
+    cout << "[8] Usuń plik" << endl;
+    cout << "[9] Wyjście" << endl;
     cin >> wybor;
     cin.ignore();
     return wybor;
@@ -226,13 +227,23 @@ int main() {
         czyscEkran();
 
         switch (mainWybor) {
+
         case 1:
+            folder = choose_folder();
+
+            if (!folder.empty()) {
+                cout << "Wybrano folder: " << folder << endl;
+            } else {
+                cout << "Anulowano wybór folderu" << endl;
+            } break;
+
+        case 2:
             dodajZadanie(listaZadan);
             break;
-        case 2:
+        case 3:
             pokazywanieZadania(listaZadan);
             break;
-        case 3:
+        case 4:
             cout << "Co chcesz zrobić?" << endl;
             cout << "[1] Usunąć wszystkie zadania z listy " << endl;
             cout << "[2] Usunąć pojedyncze zadania z listy wybrane przez ciebie" << endl;
@@ -246,23 +257,23 @@ int main() {
                 usuwanieZadania(listaZadan);
             }
             break;
-        case 4:
+        case 5:
             pokazywanieZadania(listaZadan);
             edytujZadanie(listaZadan);
             break;
-        case 5:               // Zapisz do pliku
+        case 6:               // Zapisz do pliku
             wyswietlaniePlikow(folder);
             cout << "Podaj nazwe pliku do którego chcesz zapisać zadania: ";
             cin >> nazwaPliku;
             zapiszDoPliku(listaZadan, nazwaPliku, folder);
             break;
-        case 6:
+        case 7:
             wyswietlaniePlikow(folder);
             cout << "Z którego pliku chcesz załadowac zadania?" << endl;
             cin >> nazwaPliku;
             wczytywanieZpliku(listaZadan, nazwaPliku, folder);
             break;
-        case 7:
+        case 8:
             wyswietlaniePlikow(folder);
             cout << "Który plik chcesz usunąć?" << endl;
             cout << "Wpisz Exit aby wyjść" << endl;
@@ -274,7 +285,7 @@ int main() {
                 czyscEkran();
                 break;
             }
-        case 8:
+        case 9:
             cout << "Żegnaj!" << endl;
             return 0;
         default:
