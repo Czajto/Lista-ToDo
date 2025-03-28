@@ -6,7 +6,9 @@
 #include <locale>
 #include <codecvt>
 #include <filesystem>
+#include <algorithm>
 #include <limits>
+#define NOMINMAX // Wyłącza makra min i max z windows.h
 #include <windows.h>
 #include <cstdlib>  // dla system()
 
@@ -205,8 +207,7 @@ bool potwierdzenie(const string& komunikat) {
 
 int main() {
     // Ustawia kodowanie na UTF-8
-    SetConsoleOutputCP(CP_UTF8);
-
+    //SetConsoleOutputCP(CP_UTF8);
     string nazwaPliku;
     vector<string> listaZadan;
 
